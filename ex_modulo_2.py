@@ -8,5 +8,18 @@ def ex1(lista):
 
     print('Existem {} números pares na lista {}'.format(cont_pares, lista_nums))
 
+def ex2():
+    for letra in input('Digite uma palavra:'):
+        print(letra)
 
-ex1([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12])
+def ex3(*args):
+    lista1, lista2 = args
+    lista_sum = []
+    for pos_lista1, item_lista1 in enumerate(lista1):
+        lista_sum.append(item_lista1 + lista2[pos_lista1])
+    return lista_sum
+
+
+# ex1([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12])
+#ex2()
+print(ex3([1, 2, 3], [4, 5, 6]))
