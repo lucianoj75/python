@@ -1,4 +1,5 @@
 import csv
+import requests as req
 
 
 def ex1_ler_arquivo(arquivo, delim=','):
@@ -20,7 +21,7 @@ def ex2_copiar_arquivo(arquivo, delim, arquivo2):
         escritor.writerows(linha_copia)
 
 
-def ex2_arquivo_media(arquivo, delim, arquivo2):
+def ex3_arquivo_media(arquivo, delim, arquivo2):
     linha_copia = []
 
     with open(arquivo, 'r') as arq:
@@ -40,6 +41,13 @@ def ex2_arquivo_media(arquivo, delim, arquivo2):
         escritor.writerows(linha_copia)
 
 
+def ex4_star_wars():
+    url = 'https://swapi.dev/api/people/4/'
+    retorno = req.get(url).json()
+    print(f'Nome: {retorno["name"]}\nAltura: {retorno["height"]}\nMassa: {retorno["mass"]}\nAniversário: {retorno["height"]}')
+
+
 # ex1_ler_arquivo('alunos.csv')
 # ex2_copiar_arquivo('alunos.csv', ',', 'alunos_copia.csv')
-ex2_arquivo_media('alunos.csv', ',', 'alunos_media.csv')
+# ex3_arquivo_media('alunos.csv', ',', 'alunos_media.csv')
+ex4_star_wars()
