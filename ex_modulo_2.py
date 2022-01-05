@@ -41,6 +41,7 @@ def ex4_5():
     for chave in dct_meses_dias:
         print(f'Mês {chave} tem {dct_meses_dias[chave]} dias')
 
+
 ex1([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12])
 ex2()
 print(ex3([1, 2, 3], [4, 5, 6]))
