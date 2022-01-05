@@ -1,6 +1,6 @@
 import csv
 import requests as req
-
+import datetime
 
 def ex1_ler_arquivo(arquivo, delim=','):
     with open(arquivo, 'r') as arq:
@@ -47,7 +47,14 @@ def ex4_star_wars():
     print(f'Nome: {retorno["name"]}\nAltura: {retorno["height"]}\nMassa: {retorno["mass"]}\nAniversário: {retorno["height"]}')
 
 
-# ex1_ler_arquivo('alunos.csv')
-# ex2_copiar_arquivo('alunos.csv', ',', 'alunos_copia.csv')
-# ex3_arquivo_media('alunos.csv', ',', 'alunos_media.csv')
+def ex5_covid():
+    url = 'https://api.covid19api.com/country/brazil'
+    retorno = req.get(url).json()
+    print(f'Primeiro dia de COVID no Brasil foi em {datetime.datetime.strptime(retorno[0]["Date"][:10], "%Y-%m-%d").strftime(format="%d/%m/%Y")}')
+
+
+ex1_ler_arquivo('alunos.csv')
+ex2_copiar_arquivo('alunos.csv', ',', 'alunos_copia.csv')
+ex3_arquivo_media('alunos.csv', ',', 'alunos_media.csv')
 ex4_star_wars()
+ex5_covid()
