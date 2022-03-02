@@ -1,0 +1,4 @@
+www.uol.com.br;80
+8.8.8.8;80
+4.4.4.4;80
+www.google.com;80
